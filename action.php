@@ -34,7 +34,8 @@ if(isset($_SESSION['auth_token'])) {
             $data = "id=$id";
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, $url);
-            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+            //curl_setopt($ch, CURLOPT_POST, true);
             curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -55,7 +56,8 @@ if(isset($_SESSION['auth_token'])) {
                 $data = "id=$id&name=$name&desc=$desc&quantity=$quantity&price=$price&sku=$sku&category=$category&image=$image";
                 $ch = curl_init();
                 curl_setopt($ch, CURLOPT_URL, $url);
-                curl_setopt($ch, CURLOPT_POST, true);
+                curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
+                //curl_setopt($ch, CURLOPT_POST, true);
                 curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
                 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

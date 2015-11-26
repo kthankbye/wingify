@@ -83,7 +83,7 @@ class API_Wingify extends REST {
         }
     }
     public function UpdateProduct() {
-        if($this->get_request() != "POST") {
+        if($this->get_request() != "PUT") {
             $response = array("msg" => $this->get_request()." Not Allowed!");
             $this->response(json_encode($response));
         } else {
